@@ -1,17 +1,17 @@
 <?php
+require_once __DIR__ . "/partials/functions.php";
 
-$disc_list = file_get_contents("dischi.json");
+$list = get_data();
+// $like_index;
 
-$list = json_decode($disc_list,true);
+if (isset($_POST["like_index"])) {
 
-$response_data = [
-    "response" => $list
-];
+    echo "if";
+    echo " " . $_POST["like_index"];
 
-$json_list = json_encode($response_data);
+    $like_index = $_POST["like_index"];
 
-header("Content-Type: application/json");
+    $list = like($like_index, $list);
 
-echo $json_list;
-
-?>
+}
+send_request($list);
