@@ -8,24 +8,23 @@ Vue.createApp({
     created(){
         axios.get(this.apiUrl).then(resp => {
             this.discList = resp.data.response;
-            console.log(this.discList);
+            console.log("Created: " + this.discList);
         });
     },
     methods: {
         handleLike(index){
-            const data = {
-                like_index: index
+            
+            const data = new FormData();
+            data.append("like_index",index);
+            console.log("Indice inviato: " + index);
 
-            }
-            console.log(index);
             axios.post(this.apiUrl, data, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             }).then(resp => {
                 this.discList = resp.data.response;
-                console.log("ciao");
-                console.log(this.discList);
+                console.log("POST: " + this.discList);
             });
         }
     }
