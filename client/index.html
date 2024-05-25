@@ -40,7 +40,7 @@
             </a>
           </div>
            <ul class="d-flex gap-4">
-            <li v-for="link in navLinks" class="d-flex align-items-center">
+            <li v-for="(link,index) in navLinks" class="d-flex align-items-center" @click="handleOptions(link)">
               <a href="#">
                 {{link}}
               </a>
@@ -69,6 +69,8 @@
   
                     </div>
                 </div>
+                
+
             </div>
          </div>
         </main>

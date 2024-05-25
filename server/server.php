@@ -10,4 +10,12 @@ if (isset($_POST["like_index"])) {
     $list = like($like_index, $list);
 
 }
+
+if (isset($_GET['like'])) {
+
+    $list = array_filter($list, function($list){
+        return $list["like"] === true;
+    });
+}
+
 send_request($list);
