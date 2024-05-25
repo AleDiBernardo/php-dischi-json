@@ -2,6 +2,10 @@ Vue.createApp({
     data() {
         return {
             discList: [],
+            navLinks: [
+                "All",
+                "Favorites"
+            ],
             apiUrl: "http://localhost/boolean/php-dischi-json/server/server.php"
         }
     },

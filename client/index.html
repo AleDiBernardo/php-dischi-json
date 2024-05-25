@@ -19,17 +19,35 @@
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <!-- Custom Style -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Logo -->
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <title>Boolfy</title>
   </head>
   <body>
     <div id="app" >
-      <header class="text-light">
-        <div class="ms-container-80 d-flex align-items-center">
-          <h3 class="fw-bold p-3">Logo</h3>
-        </div>
+      <header>
+        <nav>
+         <div class="ms-container-80 d-flex align-items-center justify-content-between">
+          <div class="img-ctn d-flex align-items-center">
+            <a href="#">
+              <img src="assets/logo.png" alt="">
+            </a>
+          </div>
+           <ul class="d-flex gap-4">
+            <li v-for="link in navLinks" class="d-flex align-items-center">
+              <a href="#">
+                {{link}}
+              </a>
+            </li>
+           </ul>
+         </div>
+       </nav>
       </header>
 
         <main>

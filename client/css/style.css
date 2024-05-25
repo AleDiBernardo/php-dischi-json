@@ -1,6 +1,6 @@
 :root{
     --header-heigth: 70px;
-    --header-color: #06131F;
+    --nav-color: #06131F;
     --card-color: #112030;
     --main-bgcolor: #1D2D3C;
 }
@@ -15,6 +15,10 @@ img{
     max-width: 100%;
 }
 
+.img-ctn{
+    width: 50px;
+    height: 100%;
+}
 
 .card{
     padding: 20px 50px;
@@ -30,7 +34,7 @@ img{
     color: greenyellow;
     cursor: pointer;
     
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .card-body{
@@ -50,8 +54,41 @@ img{
 header{
     width: 100%;
     height: var(--header-heigth);
-    background-color: var(--header-color);
 }
+
+nav{
+    background-color: var(--nav-color);
+    color: greenyellow;
+    height: 100%;
+
+    & .ms-container-80{
+        height: 100%;
+    }
+
+    & ul{
+        margin: 0px;
+        
+        height: 100%;
+        & li{
+            height: 100%;
+
+
+            list-style-type: none;
+
+            & a{
+                color: inherit;
+                text-decoration: none;
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            &:hover{
+                border-bottom: 1px solid greenyellow;
+            }
+        }
+    }
+}
+
 
 main{
     height: calc(100vh - var(--header-heigth));
